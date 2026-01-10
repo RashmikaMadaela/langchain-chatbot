@@ -1,0 +1,49 @@
+PROFILE SUMMARY:
+Rashmika Madaela is a Computer Science and Engineering (CSE) undergraduate at the University of Moratuwa, Sri Lanka. He is a high-achieving student with a current GPA of 3.78/4.00. Beyond academics, he is a content creator with over 50,000 subscribers on YouTube and an experienced video editor. He holds leadership positions in the Rotaract Club and has a background in competitive mathematics.
+
+CONTACT & LINKS:
+- Email: rashmikamadaelaofficial@gmail.com
+- Phone: +94 71 721 1280
+- LinkedIn: linkedin.com/in/rashmikamadaela
+- GitHub: github.com/RashmikaMadaela
+- Location: Polonnaruwa, Sri Lanka
+
+EDUCATION:
+- Degree: B.Sc. Engineering (Hons) in Computer Science and Engineering, University of Moratuwa (2024-2028 Expected).
+- Current GPA: 3.78/4.00.
+- Academic Awards: Dean's List Recipient (Semester 1 GPA: 4.00).
+- Secondary Education: Royal Central College Polonnaruwa.
+- Advanced Level (A/L) 2022: Physical Science Stream, 3 A's, Z-score 2.8486, Island Rank 30.
+- Ordinary Level (O/L) 2019: 9 A's including Mathematics, Science, English, and ICT.
+
+TECHNICAL SKILLS:
+- Programming Languages: Python, Java, C++, JavaScript.
+- Web Development: React.js, HTML, CSS, Vite, Tailwind CSS, PHP, MySQL.
+- Developer Tools: Git, GitHub.
+- Design & Multimedia: Adobe Premiere Pro, After Effects, Photoshop, Canva.
+- Hardware Design: Verilog (FPGA), BASYS 3.
+
+PROJECTS:
+1. Nano Processor Design (Group Project): Designed a 4-bit Nano processor on a BASYS 3 FPGA board. Contributions included designing top modules, developing testbenches, and implementing extended operations (AND, OR, MUL).
+2. Dynamic GPA Calculator (Personal Project): A responsive web app using React, Vite, and Tailwind CSS. Features real-time SGPA/CGPA calculation with custom and pre-filled course modes.
+3. Movie Watchlist App (Personal Project): A web app using React and The Movie Database (TMDb) API to browse movies and manage a local-storage watchlist.
+
+WORK EXPERIENCE & FREELANCING:
+- Freelance Video Editor (Fiverr, 2020-Present): Provides professional video editing services globally.
+- YouTuber (SL Power, 2017-2021): Created tech content, managed a channel with 50,000+ subscribers, and handled all video production.
+- Teaching Resource Person (2024-2025): Trains students for Mathematics Olympiads (Zonal & Provincial) and conducts problem-solving workshops.
+
+LEADERSHIP & VOLUNTEERING:
+- Public Relations Co-Director: Rotaract Club of University of Moratuwa (2025-Present).
+- Co-Chair Positions: Led multiple major university events including 'Rotaspark '25' (Silver Award winner), 'Binara Padura' (Silver Award winner), and 'Premio Formalita'.
+- Design Co-Lead: Enigma 2.0 (Math Society) and MoraForesight 3.0 (IEEE Student Branch).
+- District Co-coordinator: Sasnaka Sansada (2024-2025), coordinated educational activities.
+- Sergeant-at-Arms: Rotaract Club of University of Moratuwa (2024-2025).
+
+AWARDS & ACHIEVEMENTS:
+- International Mathematics and Science Olympiad (Thailand, 2015): Bronze Medal.
+- National Mathematics Olympiad Competition (2016): Gold Medal.
+- Rotaract District Awards: Won Silver Awards for 'Most Outstanding Membership Initiative' and best aesthetic event projects.
+
+SOFT SKILLS:
+Leadership, Public Speaking, Team Collaboration, Creative Thinking, Problem Solving.
