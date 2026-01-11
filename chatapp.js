@@ -1,5 +1,7 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { PromptTemplate } from "@langchain/core/prompts";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import { retriever } from "./utils/retriever.js";
 process.loadEnvFile(); // Load environment variables from .env file
 
 const llm = new ChatGoogleGenerativeAI({
@@ -17,11 +19,11 @@ const standaloneQuestionTemplate = 'Given a question, convert it to a standalone
 const standaloneQuestionPrompt = PromptTemplate.fromTemplate(standaloneQuestionTemplate)
 
 // Take the standaloneQuestionPrompt and PIPE the model
-const standaloneQuestionChain = standaloneQuestionPrompt.pipe(llm)
+const chain = standaloneQuestionPrompt.pipe(llm).pipe(new StringOutputParser()).pipe(retriever)
 
 // Await the response when you INVOKE the chain. 
 // Remember to pass in a question.
-const response = await standaloneQuestionChain.invoke({
+const response = await chain.invoke({
     question: 'What are the technical requirements for running Scrimba? I only have a very old laptop which is not that powerful.'
 })
 
