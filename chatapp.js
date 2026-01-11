@@ -3,6 +3,7 @@ import { PromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { retriever } from "./utils/retriever.js";
 import { combineDocuments } from "./utils/combineDocuments.js";
+import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 process.loadEnvFile(); // Load environment variables from .env file
 
 const llm = new ChatGoogleGenerativeAI({
@@ -19,10 +20,7 @@ const standaloneQuestionTemplate = 'Given a question, convert it to a standalone
 // A prompt created using PromptTemplate and the fromTemplate method
 const standaloneQuestionPrompt = PromptTemplate.fromTemplate(standaloneQuestionTemplate)
 
-// Take the standaloneQuestionPrompt and PIPE the model
-const chain = standaloneQuestionPrompt.pipe(llm).pipe(new StringOutputParser()).pipe(retriever)
-
-const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Scrimba based on the context provided. Try to find the answer in the context. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email help@scrimba.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
+const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Rashmika based on the context provided. Try to find the answer in the context. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email rashmikamadaelaofficial@gmail.com. Don't try to make up an answer. Always speak as if you were a friendly assistant helping the recruiters who asks questions about Rashmika to hire him.
 context: {context}
 question: {question}
 answer:
@@ -30,10 +28,33 @@ answer:
 
 const answerPrompt = PromptTemplate.fromTemplate(answerTemplate)
 
+const standaloneChain = standaloneQuestionPrompt.pipe(llm).pipe(new StringOutputParser())
+const retriverChain = RunnableSequence.from([
+    prevResult => prevResult.standaloneQuestion,
+    retriever,
+    combineDocuments
+])
+const answerChain = answerPrompt.pipe(llm).pipe(new StringOutputParser())
+
+
+// Take the standaloneQuestionPrompt and PIPE the model
+const chain = RunnableSequence.from([
+    {
+        standaloneQuestion: standaloneChain,
+        original_input: new RunnablePassthrough()
+
+    },
+    {
+        context: retriverChain,
+        question: ({original_input})=> original_input.question
+    },
+    answerChain
+])
+
 // Await the response when you INVOKE the chain. 
 // Remember to pass in a question.
 const response = await chain.invoke({
-    question: 'What are the technical requirements for running Scrimba? I only have a very old laptop which is not that powerful.'
+    question: 'Has he worked on any open source projects?'
 })
 
 console.log(response)

@@ -1,6 +1,7 @@
 import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { createClient } from '@supabase/supabase-js';
+process.loadEnvFile(); // Load environment variables from .env file
 
 const sbApiKey = process.env.SUPABASE_API_KEY
 const dbUrl = process.env.DATABASE_URL
