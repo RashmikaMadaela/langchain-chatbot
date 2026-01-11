@@ -2,6 +2,7 @@ import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { retriever } from "./utils/retriever.js";
+import { combineDocuments } from "./utils/combineDocuments.js";
 process.loadEnvFile(); // Load environment variables from .env file
 
 const llm = new ChatGoogleGenerativeAI({
