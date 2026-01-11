@@ -4,6 +4,7 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 import { retriever } from "./utils/retriever.js";
 import { combineDocuments } from "./utils/combineDocuments.js";
 import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
+import { formatConvHistory } from "./utils/fotmatConvHistory.js";
 process.loadEnvFile(); // Load environment variables from .env file
 
 document.addEventListener('submit', (e) => {
@@ -25,9 +26,10 @@ const standaloneQuestionTemplate = 'Given a question, convert it to a standalone
 // A prompt created using PromptTemplate and the fromTemplate method
 const standaloneQuestionPrompt = PromptTemplate.fromTemplate(standaloneQuestionTemplate)
 
-const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Rashmika based on the context provided. Try to find the answer in the context. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email rashmikamadaelaofficial@gmail.com. Don't try to make up an answer. Always speak as if you were a friendly assistant helping the recruiters who asks questions about Rashmika to hire him.
+const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Rashmika based on the context provided and the conversation history. Try to find the answer in the context. If the answer is not given in the context, find the answer in the conversation history if possible. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email rashmikamadaelaofficial@gmail.com. Don't try to make up an answer. Always speak as if you were a friendly assistant helping the recruiters who asks questions about Rashmika to hire him.
 context: {context}
 question: {question}
+conversation history:{conversation_history}
 answer:
 `
 
@@ -51,10 +53,13 @@ const chain = RunnableSequence.from([
     },
     {
         context: retriverChain,
-        question: ({original_input})=> original_input.question
+        question: ({original_input})=> original_input.question,
+        conversation_history: ({original_input})=> original_input.conv_history
     },
     answerChain
 ])
+
+const convHistory = []
 
 async function progressConversation() {
     const userInput = document.getElementById('user-input')
@@ -70,7 +75,8 @@ async function progressConversation() {
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
     // Await the response when you INVOKE the chain. 
     const response = await chain.invoke({
-        question: question
+        question: question,
+        conv_history: formatConvHistory(convHistory)
     })
 
     // add AI message
