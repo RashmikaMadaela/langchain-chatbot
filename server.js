@@ -1,3 +1,4 @@
+import express from "express";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
@@ -7,11 +8,13 @@ import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables
 import { formatConvHistory } from "./utils/fotmatConvHistory.js";
 process.loadEnvFile(); // Load environment variables from .env file
 
-document.addEventListener('submit', (e) => {
-    e.preventDefault()
-    progressConversation()
-})
+const app = express();
+app.use(express.json());
 
+// 1. Serve your HTML/CSS frontend
+app.use(express.static("public"));
+
+// 2. Setup LLM and prompt
 const llm = new ChatGoogleGenerativeAI({
   model: "gemini-2.5-flash", 
   temperature: 0,
@@ -59,30 +62,21 @@ const chain = RunnableSequence.from([
     answerChain
 ])
 
-const convHistory = []
-
-async function progressConversation() {
-    const userInput = document.getElementById('user-input')
-    const chatbotConversation = document.getElementById('chatbot-conversation-container')
-    const question = userInput.value
-    userInput.value = ''
-
-    // add human message
-    const newHumanSpeechBubble = document.createElement('div')
-    newHumanSpeechBubble.classList.add('speech', 'speech-human')
-    chatbotConversation.appendChild(newHumanSpeechBubble)
-    newHumanSpeechBubble.textContent = question
-    chatbotConversation.scrollTop = chatbotConversation.scrollHeight
-    // Await the response when you INVOKE the chain. 
+app.post("/chat", async (req, res) => {
+  try {
     const response = await chain.invoke({
-        question: question,
-        conv_history: formatConvHistory(convHistory)
+        question: req.body.question,
+        conv_history: formatConvHistory(req.body.conv_history)
     })
+    
+    // Send just the text back to the browser
+    res.json({ reply: response });
 
-    // add AI message
-    const newAiSpeechBubble = document.createElement('div')
-    newAiSpeechBubble.classList.add('speech', 'speech-ai')
-    chatbotConversation.appendChild(newAiSpeechBubble)
-    newAiSpeechBubble.textContent = response
-    chatbotConversation.scrollTop = chatbotConversation.scrollHeight
-}
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// 4. Start
+app.listen(3000, () => console.log("Server running at http://localhost:3000"));

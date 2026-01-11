@@ -22,7 +22,8 @@
     "@langchain/core": "^1.1.12",
     "@langchain/google-genai": "^2.1.7",
     "@langchain/textsplitters": "^1.0.1",
-    "@supabase/supabase-js": "^2.90.1"
+    "@supabase/supabase-js": "^2.90.1",
+    "express": "^5.2.1"
   },
   "type": "module"
 }
