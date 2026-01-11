@@ -1,49 +1,67 @@
-PROFILE SUMMARY:
-Rashmika Madaela is a Computer Science and Engineering (CSE) undergraduate at the University of Moratuwa, Sri Lanka. He is a high-achieving student with a current GPA of 3.78/4.00. Beyond academics, he is a content creator with over 50,000 subscribers on YouTube and an experienced video editor. He holds leadership positions in the Rotaract Club and has a background in competitive mathematics.
+### PROFILE SUMMARY
+Rashmika Madaela is a Computer Science and Engineering (CSE) undergraduate at the University of Moratuwa, Sri Lanka (Batch of 2028). He is a Dean's List scholar with a Semester 1 GPA of 4.00/4.00 and a Semester 2 GPA of 3.59. Beyond academics, he is a Co-Founder of the startup "Animovex" and a content creator with over 50,000 subscribers on YouTube. He is an active open-source contributor (WSO2) and a competitive programmer.
 
-CONTACT & LINKS:
-- Email: rashmikamadaelaofficial@gmail.com
-- Phone: +94 71 721 1280
+### CONTACT INFORMATION
+- Email: rashmikam.23@cse.mrt.ac.lk
 - LinkedIn: linkedin.com/in/rashmikamadaela
 - GitHub: github.com/RashmikaMadaela
 - Location: Polonnaruwa, Sri Lanka
 
-EDUCATION:
+### EDUCATION & ACADEMIC PERFORMANCE
 - Degree: B.Sc. Engineering (Hons) in Computer Science and Engineering, University of Moratuwa (2024-2028 Expected).
-- Current GPA: 3.78/4.00.
-- Academic Awards: Dean's List Recipient (Semester 1 GPA: 4.00).
-- Secondary Education: Royal Central College Polonnaruwa.
-- Advanced Level (A/L) 2022: Physical Science Stream, 3 A's, Z-score 2.8486, Island Rank 30.
-- Ordinary Level (O/L) 2019: 9 A's including Mathematics, Science, English, and ICT.
+- Current Academic Standing: - Semester 1: GPA 4.00/4.00 (Dean's List Award). Subjects included Programming Fundamentals (A), Mathematics (A), and Mechanics (A+).
+  - Semester 2: SGPA 3.59. Subjects included Data Structures & Algorithms (A), Computer Organization (A), and Language Skills (A+).
+  - Semester 3 (Ongoing): Studying Database Systems, Operating Systems, Computer Architecture, and Artificial Intelligence.
+- Secondary Education: Royal Central College Polonnaruwa (3 A's in Physical Science, Island Rank 30) [CV].
 
-TECHNICAL SKILLS:
-- Programming Languages: Python, Java, C++, JavaScript.
+### TECHNICAL SKILLS
+- Languages: Python, Java, C++, JavaScript, Ballerina (Learning).
 - Web Development: React.js, HTML, CSS, Vite, Tailwind CSS, PHP, MySQL.
-- Developer Tools: Git, GitHub.
-- Design & Multimedia: Adobe Premiere Pro, After Effects, Photoshop, Canva.
-- Hardware Design: Verilog (FPGA), BASYS 3.
+- Data Science & AI: Supervised Machine Learning (Regression/Classification), Pandas, Scikit-Learn.
+- Tools & DevOps: Git, GitHub, Docker, Postman, BASYS 3 FPGA.
+- Design: Adobe Premiere Pro, After Effects, Photoshop, Canva.
 
-PROJECTS:
-1. Nano Processor Design (Group Project): Designed a 4-bit Nano processor on a BASYS 3 FPGA board. Contributions included designing top modules, developing testbenches, and implementing extended operations (AND, OR, MUL).
-2. Dynamic GPA Calculator (Personal Project): A responsive web app using React, Vite, and Tailwind CSS. Features real-time SGPA/CGPA calculation with custom and pre-filled course modes.
-3. Movie Watchlist App (Personal Project): A web app using React and The Movie Database (TMDb) API to browse movies and manage a local-storage watchlist.
+### ACADEMIC & PERSONAL PROJECTS
+- Hotel Management System (Full-Stack Web App): - Context: Group project for the Database module (Semester 3).
+  - Tech Stack: React, Node.js, Express.js, PostgreSQL.
+  - Key Contributions: Implemented role-based authentication (RBAC) and developed backend controllers for core system functionality.
+- Nano Processor Design (Hardware/FPGA): - Context: Designed and implemented a 4-bit Nano processor on a BASYS 3 FPGA board as a group project.
+  - Key Contributions: Designed top modules for minimal and extended processor versions, developed testbenches, and implemented extended ALU operations (AND, OR, MUL).
+- Dynamic GPA Calculator (Web App): - Context: Developed a flexible, responsive GPA calculator using React, Vite, and Tailwind CSS.
+  - Features: Dual modes for pre-filled CSE courses and custom setups; provides real-time SGPA and CGPA calculations.
+- Movie Watchlist App (Web App): - Context: Built a modern web application to browse movies and manage a personal watchlist using the TMDb API.
+  - Tech Stack: React, Vite, Tailwind CSS, Local Storage.
 
-WORK EXPERIENCE & FREELANCING:
-- Freelance Video Editor (Fiverr, 2020-Present): Provides professional video editing services globally.
-- YouTuber (SL Power, 2017-2021): Created tech content, managed a channel with 50,000+ subscribers, and handled all video production.
-- Teaching Resource Person (2024-2025): Trains students for Mathematics Olympiads (Zonal & Provincial) and conducts problem-solving workshops.
+### WORK EXPERIENCE & ENTREPRENEURSHIP
+- Co-Founder | Animovex (Apr 2025 - Present): Leading a self-employed startup venture focused on co-creation and leadership.
+- Freelance Video Editor | Fiverr (2020 - Present): Delivered professional video editing and motion graphics services globally for over 5 years.
+- YouTuber | SL Power (2017 - 2021): Built a tech channel with 50,000+ subscribers; handled all filming, editing, and production [CV].
+- Teaching Resource Person: Trains students for Provincial and Zonal Mathematics Olympiads [CV].
 
-LEADERSHIP & VOLUNTEERING:
-- Public Relations Co-Director: Rotaract Club of University of Moratuwa (2025-Present).
-- Co-Chair Positions: Led multiple major university events including 'Rotaspark '25' (Silver Award winner), 'Binara Padura' (Silver Award winner), and 'Premio Formalita'.
-- Design Co-Lead: Enigma 2.0 (Math Society) and MoraForesight 3.0 (IEEE Student Branch).
-- District Co-coordinator: Sasnaka Sansada (2024-2025), coordinated educational activities.
-- Sergeant-at-Arms: Rotaract Club of University of Moratuwa (2024-2025).
+### OPEN SOURCE & PUBLICATIONS
+- WSO2 Hacktoberfest 2025: Contributed to WSO2 API Manager documentation. Corrected Dev Portal customization configurations by building the system locally to verify the fix.
+- Medium Writer: Published "Beyond Code: A Developer’s Guide to Accessible Web Design" highlighting web accessibility principles.
 
-AWARDS & ACHIEVEMENTS:
-- International Mathematics and Science Olympiad (Thailand, 2015): Bronze Medal.
-- National Mathematics Olympiad Competition (2016): Gold Medal.
-- Rotaract District Awards: Won Silver Awards for 'Most Outstanding Membership Initiative' and best aesthetic event projects.
+### COMPETITIONS & HACKATHONS
+- CodeRally 6.0: Selected as a Finalist in the Intermediate Tier (2025).
+- Innovate with Ballerina: Participant in the WSO2-organized hackathon.
+- Competitive Programming: Active participant in IEEEXtreme (Global) and JapuraXtreme (Local) coding competitions.
+- Mathematics Olympiads: - Bronze Medalist, 12th International Mathematics and Science Olympiad (IMSO), Thailand (2015).
+  - Gold Medalist, National Mathematics Olympiad (2016) [CV].
 
-SOFT SKILLS:
-Leadership, Public Speaking, Team Collaboration, Creative Thinking, Problem Solving.
+### CERTIFICATIONS
+- AI & Data Science: - Supervised Machine Learning: Regression and Classification (DeepLearning.AI/Coursera).
+  - Fundamentals of Accelerated Data Science (NVIDIA DLI).
+  - Introduction to Generative AI (Google).
+- Software Engineering: - Developing Front-End Apps with React (IBM).
+  - Postman API Fundamentals Student Expert.
+  - Introduction to Software Engineering (IBM).
+  - HackerRank: Python (Basic) & Problem Solving (Basic).
+
+### LEADERSHIP & VOLUNTEERING
+- Rotaract Club of University of Moratuwa: - Public Relations Co-Director (2025-Present).
+  - Co-Chair for 'Rotaspark 25', 'Binara Padura' (Silver Award Winner), and 'Premio Formalita'.
+- MoraSpirit: Video Editing & Live Streaming Pillar Member (May 2024 - Present).
+- Mathematics Society: Public Relations Committee Member & Enigma 2.0 Design Co-Lead.
+- IEEE Student Branch: Design Co-Lead for MoraForesight 3.0.
+- Sasnaka Sansada: District Coordinator (2024-2025).
