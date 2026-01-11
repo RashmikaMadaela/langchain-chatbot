@@ -21,6 +21,14 @@ const standaloneQuestionPrompt = PromptTemplate.fromTemplate(standaloneQuestionT
 // Take the standaloneQuestionPrompt and PIPE the model
 const chain = standaloneQuestionPrompt.pipe(llm).pipe(new StringOutputParser()).pipe(retriever)
 
+const answerTemplate = `You are a helpful and enthusiastic support bot who can answer a given question about Scrimba based on the context provided. Try to find the answer in the context. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email help@scrimba.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
+context: {context}
+question: {question}
+answer:
+`
+
+const answerPrompt = PromptTemplate.fromTemplate(answerTemplate)
+
 // Await the response when you INVOKE the chain. 
 // Remember to pass in a question.
 const response = await chain.invoke({
