@@ -6,6 +6,11 @@ import { combineDocuments } from "./utils/combineDocuments.js";
 import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 process.loadEnvFile(); // Load environment variables from .env file
 
+document.addEventListener('submit', (e) => {
+    e.preventDefault()
+    progressConversation()
+})
+
 const llm = new ChatGoogleGenerativeAI({
   model: "gemini-2.5-flash", 
   temperature: 0,
@@ -51,14 +56,6 @@ const chain = RunnableSequence.from([
     answerChain
 ])
 
-// Await the response when you INVOKE the chain. 
-// Remember to pass in a question.
-const response = await chain.invoke({
-    question: 'Has he worked on any open source projects?'
-})
-
-console.log(response)
-
 async function progressConversation() {
     const userInput = document.getElementById('user-input')
     const chatbotConversation = document.getElementById('chatbot-conversation-container')
@@ -71,11 +68,15 @@ async function progressConversation() {
     chatbotConversation.appendChild(newHumanSpeechBubble)
     newHumanSpeechBubble.textContent = question
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
+    // Await the response when you INVOKE the chain. 
+    const response = await chain.invoke({
+        question: question
+    })
 
     // add AI message
     const newAiSpeechBubble = document.createElement('div')
     newAiSpeechBubble.classList.add('speech', 'speech-ai')
     chatbotConversation.appendChild(newAiSpeechBubble)
-    newAiSpeechBubble.textContent = result
+    newAiSpeechBubble.textContent = response
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
 }
