@@ -16,11 +16,10 @@ app.use(express.static("public"));
 
 // 2. Setup LLM and prompt
 const llm = new ChatGoogleGenerativeAI({
-  model: "gemini-2.5-flash", 
+  model: "gemma-3-27b-it", 
   temperature: 0,
   maxRetries: 2,
   apiKey: process.env.GOOGLE_API_KEY,
-  apiVersion: "v1",
 });
 
 // A string holding the phrasing of the prompt
