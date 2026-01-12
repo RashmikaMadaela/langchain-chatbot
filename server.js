@@ -6,7 +6,14 @@ import { retriever } from "./utils/retriever.js";
 import { combineDocuments } from "./utils/combineDocuments.js";
 import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 import { formatConvHistory } from "./utils/fotmatConvHistory.js";
-process.loadEnvFile(); // Load environment variables from .env file
+
+try {
+    // Try loading the file (for local development)
+    process.loadEnvFile();
+} catch (error) {
+    // If file is missing, ignore it (Docker/Cloud handles the variables)
+    console.log("No .env file found, assuming environment variables are injected.");
+}
 
 const app = express();
 app.use(express.json());
