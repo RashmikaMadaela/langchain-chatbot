@@ -39,6 +39,6 @@ async function progressConversation() {
     const newAiSpeechBubble = document.createElement('div')
     newAiSpeechBubble.classList.add('speech', 'speech-ai')
     chatbotConversation.appendChild(newAiSpeechBubble)
-    newAiSpeechBubble.textContent = data.reply
+    newAiSpeechBubble.innerHTML = marked.parse(data.reply)
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
 }
